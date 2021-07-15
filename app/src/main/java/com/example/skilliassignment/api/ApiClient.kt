@@ -26,7 +26,7 @@ object ApiClient {
                 .build()
 
         val retrofit = Retrofit.Builder()
-                .baseUrl("https://jsonkeeper.com/b/")
+                .baseUrl("https://api.jsonbin.io/b/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)
