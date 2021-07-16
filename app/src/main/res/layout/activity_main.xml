@@ -29,6 +29,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="20dp"
         android:id="@+id/bt_click"
+        android:src="@drawable/camera"
         android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 

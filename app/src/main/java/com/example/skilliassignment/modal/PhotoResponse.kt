@@ -1,5 +1,6 @@
 package com.example.skilliassignment.modal
 
+import android.graphics.Bitmap
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
@@ -8,6 +9,13 @@ import com.google.gson.annotations.SerializedName
 
 
 class PhotoResponse {
+
+
+    private var isPhoto: Boolean? = false
+
+    @SerializedName("bitmap")
+    @Expose
+    private var photo: String? = null
 
     @SerializedName("comment")
     @Expose
@@ -68,4 +76,21 @@ class PhotoResponse {
     fun setTitle(title: String?) {
         this.title = title
     }
+
+    fun getIsPhoto(): Boolean? {
+        return isPhoto
+    }
+
+    fun setIsPhoto(isPhoto: Boolean?) {
+        this.isPhoto = isPhoto
+    }
+
+    fun getPhoto(): String? {
+        return photo
+    }
+
+    fun setPhoto(photo: String?) {
+        this.photo = photo
+    }
+
 }
