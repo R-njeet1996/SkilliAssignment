@@ -45,6 +45,7 @@ class PhotoAdapter(
             if (photoList[position].getPicture() != null) {
                 Glide.with(context)
                     .load(photoList[position].getPicture())
+                    .placeholder(R.color.black)
                     .into(holder.ivPost)
             }
         }

@@ -15,6 +15,7 @@ import com.example.skilliassignment.adapter.PhotoAdapter
 import com.example.skilliassignment.api.ApiCallback
 import com.example.skilliassignment.modal.ErrorModel
 import com.example.skilliassignment.modal.PhotoResponse
+import com.example.skilliassignment.utils.AppConstant
 import com.example.skilliassignment.utils.ItemClickListener
 import com.example.skilliassignment.utils.ModelPreferencesManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -120,6 +121,16 @@ class MainActivity : BaseActivity(),ItemClickListener {
     }
 
     override fun onItemCLickListener(view: View?, pos: Int) {
+          var intent = Intent(this,DetailActivity::class.java)
+         intent.putExtra(AppConstant.INTENT_EXTRAS.IS_PHOTO,photoList.get(pos).getIsPhoto())
+        if(photoList.get(pos).getIsPhoto()!!)
+        intent.putExtra(AppConstant.INTENT_EXTRAS.PHOTO_URL,photoList.get(pos).getPhoto())
+        else
+            intent.putExtra(AppConstant.INTENT_EXTRAS.PHOTO_URL,photoList.get(pos).getPicture())
+        intent.putExtra(AppConstant.INTENT_EXTRAS.PHOTO_HEAD,photoList.get(pos).getTitle())
+        intent.putExtra(AppConstant.INTENT_EXTRAS.PHOTO_TEXT,photoList.get(pos).getComment())
+
+        startActivity(intent)
 
     }
 }
