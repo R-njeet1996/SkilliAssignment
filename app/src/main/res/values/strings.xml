@@ -3,4 +3,5 @@
     <string name="home">HOME</string>
     <string name="detail_screen">DETAIL SCREEN</string>
     <string name="share">Share</string>
+    <string name="send_to">Send To</string>
 </resources>

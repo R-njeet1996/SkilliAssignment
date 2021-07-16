@@ -1,8 +1,11 @@
 package com.example.skilliassignment.adapter
 
+import android.app.Activity
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +17,7 @@ import com.example.skilliassignment.adapter.PhotoAdapter.CustomViewHolder
 import com.example.skilliassignment.modal.PhotoResponse
 import com.example.skilliassignment.utils.ItemClickListener
 import java.util.*
+
 
 class PhotoAdapter(
     var context: Context,
@@ -33,12 +37,17 @@ class PhotoAdapter(
                 val imageAsBytes = Base64.decode(
                     photoList[position].getPhoto()!!.toByteArray(), Base64.DEFAULT
                 )
+
+
+             var bitmap=   BitmapFactory.decodeByteArray(
+                    imageAsBytes,
+                    0,
+                    imageAsBytes.size
+                )
+                bitmap = Bitmap.createScaledBitmap(bitmap,500, 200, true);
+
                 holder.ivPost.setImageBitmap(
-                    BitmapFactory.decodeByteArray(
-                        imageAsBytes,
-                        0,
-                        imageAsBytes.size
-                    )
+                bitmap
                 )
             }
         } else {
